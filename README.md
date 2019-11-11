@@ -2,4 +2,4 @@
 
 Introduksjonsoppgave til SVG og Canvas i IT2810 Webutvikling
 
-Nettside: https://folk.ntnu.no/williao/Webutviling/Prosjekt1
+Nettside: http://folk.ntnu.no/williao/Webutvikling/Prosjekt1/
