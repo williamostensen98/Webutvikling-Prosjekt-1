@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="css/style.css">
+    <!-- <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway"> -->
+
+    <link href='https://fonts.googleapis.com/css?family=Raleway' rel='stylesheet'>
+    <style>
+      h1 {
+          font-family: 'Raleway', Arial, sans-serif;font-size: 50px;
+      }
+      h2{ font-family: 'Raleway', Arial, sans-serif;}
+      h4{ font-family: 'Raleway', Arial, sans-serif;}
+      li{ font-family: 'Raleway', Arial, sans-serif;font-size: 14px;}
+
+    </style>
+    <title></title>
+  </head>
+
+
+
+  <body>
+    <script src="jquery-3.4.1.min.js"></script>
+
+
+
+
+    <div class="content">
+
+        <div class="artist_name">
+          <header>
+            <h1>Pico Pablasso</h1>
+            <hr>
+
+            <h4>About The Artist</h4>
+            <p id=about>Pico Pablasso is the Italian man who has recently put his name on the map with his futuristic, modernistic and edgy digital paintings for which he has won a fair amount of awards for. This digital gallery shows his two latest works, Sad Vacant Girl and Canvassing which is his newest form of interactive imaging.
+            </p>
+
+          </header>
+
+
+          <!-- Menyen midt på siden  -->
+          <div class="nav">
+            <ul>
+              <li><a href="#svg">SVG Image</a></li>
+              <li><a href="#myCanvas">Canvas Image</a></li>
+              <li><a href="#doc">Documentation</a></li>
+            </ul>
+          </div>
+
+        </div>
+
+        <!-- SVG bilde sammen med teksten ved siden av  -->
+        <div class="abstract_svg_wrap">
+          <div class="svg_img" id="svg">
+            <svg xmlns="http://www.w3.org/2000/svg" width="500" height="500">
+
+                  <ellipse id="right_shoulder"  cx="150" cy="150" rx="100" ry="30" style="fill:purple" onclick="fill:'blue';"/>
+                  <polygon id="right_arm" points="100,40 100,80 250,50"  fill="#FF43FF"/>
+                  <ellipse id="right_elbow" cx="70" cy="100" rx="30" ry="60" style="fill:pink" transform="translate(60 -20) rotate(30)" />
+                  <ellipse id="head" cx="150" cy="100" rx="50" ry="40" transform="translate(90 -50) rotate(30)" fill="blue"/>
+
+                  <rect id="torso"  x="200" y="150"  width="80" height="90" />
+
+                  <polygon id="left_shoulder" points="200,150 230,100 400,230"  fill="#FF432F"/>
+
+                  <polygon id="left_elbow" points="360,210 400,200 400,410" fill="#FF366F" />
+
+                  <polygon id="left_arm" points="400,410 420,450 450,450" fill="green"/>
+
+                  <polygon id="body" points="200,150 400,450 200,330"  fill="#dd33FF"/>
+
+                  <circle id="right_tit" cx="200" cy="200" r="40" stroke="#56456" stroke-width="5" fill="#F333FF"/>
+                  <circle id="left_tit" cx="250" cy="220" r="30" stroke="#56456" stroke-width="5" fill="#FF33FF"/>
+
+                  <ellipse id="thigh" cx="200" cy="350" rx="150" ry="30" style="fill:purple" transform="translate(240 -10) rotate(30)" />
+                  <ellipse id="leg" cx="100" cy="400" rx="30" ry="100" style="fill:purple" />
+                  <rect id="foot" x="50" y="480"  width="50" height="20" style="fill:purple" />
+
+                </svg>
+          </div>
+          <div class="description_svg">
+            <h1 >Sad Vacant Girl</h1>
+            <hr>
+            <p>Interactive Image</p>
+          </div>
+        </div>
+
+        <!-- Canvas tegningen sammmen med teksten  -->
+        <div class="abstract_canvas_wrap">
+          <div class="description_canvas">
+            <h1 >Canvassing</h1>
+            <hr>
+            <p>Interactive Image</p>
+
+          </div>
+          <div class="canvas_img">
+              <canvas id="myCanvas" width="500" height="500"></canvas>
+          </div>
+
+        </div>
+
+
+        <!-- Dokumentasjonen -->
+      <div class="doc_wrapper">
+        <div class="documentation" id="doc">
+          <h1 >Documentation</h1>
+          <hr>
+           <p ><i class="down"></i></p> <!-- toggle knappen  -->
+
+          <p id=documentation_txt>
+            <b> CSS-grid og Flexbox-layout</b><br><br>
+            Websiden er bygget opp av en del ulike elementer som strekker seg både horisontalt(kolonner) og vertikalt(rader). Siden består derfor av en content div som funker som en wrapper for alt innholdet på siden. Siden innholdet og alle div-ene som wrapper innholdet strekker seg over flere dimensjoner altså både rader og kolonner med videre rader og kolonner i, så er den ytterste div-en (content) basert på CSS-grid layout.
+            Senere ble div-ene som wrapper bildene og tekstene basert på CSS-flexbox layout. Dette er fordi disse er bare på en dimensjons plan, altså bare kolonner eller bare rader og det ble enklere å opprettholde en flytende layout med en flexbox-layout for hver wrapper-div og CSS-grid layout over det hele grunnet grid-gaps osv.
+            <br><br>
+          <b>Bruk av HTML canvas og SVG</b> <br><br>
+            Canvas er et HTML element som brukes til å tegne grafikk via Javascript.
+            Canvas er brukt ved å først og fremst sette inn en canvas-tag i HTML dokumentet med en spesifisert høyde og bredde. Det er så laget en JavaScript-fil kalt interact.js som inneholder funksjoner som tegner canvas figuren. Her henter man ut canvas elementet fra HTML-dokumentet og i denne sammenheng setter konteksten til å være 2D. Her er det da tegnet ellipser, rektangler og sirkler ved hjelp av definerte metoder for canvas.
+            <br><br>
+            SVG står for Scalar Vector Graphics og brukes for å lage grafikk på web.
+            SVG er brukt ved å også ha en svg-tag i HTML dokumentet med definert størrelse i taggen. Her kan man derimot lage tegninger ved å bruke definerte tagger som for eks. ellipse og rect tagger inni SVG taggen. Dette gjør at når man skal lage interaktivitet i form av fargeskifte, figurer som flytter på seg eller endrer størrelse osv. Kan man direkte aksessere de enkelte elementene ved selektorer eller id-er. I canvas har man etter man har laget figurene ved JavaScript funksjoner ikke noe god mulighet for å direkte få tak i enkelte elementer eller støtte av event handlers slik som SVG.
+            <br><br>
+
+            <b>Bruk av jQuery.</b> <br><br>
+            JQuery er et Javascript bibliotek som er laget for å gjøre det enklere å bruke JavaScript på ulike nettsider. jQuery biblioteket forenkler bl. a. HTML manipulasjon, event handling og animasjon. Her er det brukt jQuery for å lage interaktiviteten på de ulike bildene.
+            Måten dette gjøres på er at jQuery lar deg direkte aksessere selektorer og elementer ved id eller class ved å bare bruke $(«tag») inne i en $(document).ready(function(){ }); som sørger for at hele HTML dokumentet er ferdig lastet før man kan gjøre noe.
+            <br><br>
+            På SVG-en er dette veldig enkelt å gjøre da man kan ha id-er på alle elementene og aksessere de gjennom jQuery ved metoden ovenfor for å så legge på events som click, mouseenter og mouseleave. Ved disse eventsene kan man så legge inn actions for hva som skal skje og her er det brukt blant annet css funksjonen for å endre farge, animate funksjonen for å endre størrelse og show og hide funksjonene.
+            Ved canvas så er det som sagt ikke noen enkel metode for å direkte aksessere de individuelle elementene så her er det bare brukt events som skjer på hele canvaset.
+            <br><br>
+            <b>Cross-browser testing</b> <br> <br>
+            Her er det gjennom utviklingen av websiden testet på to nettlesere (Google Chrome og Safari) ved å kjøre siden på disse for å sørge for at alle funksjoner som blir brukt støttes av nettleserne. Dette ble gjort ved å prøve ut alle nye funsksjoner i begge nettleserne for å se om de var kompatible og fungerte med lik oppførsel i begge nettleserne. Deretter videreutvikles disse og så repeteres testen.
+
+            <br><br>
+            <b>Viktigste informasjonskildene</b>  <br><br>
+
+            «jQuery Tutorial», w3schools.com, https://www.w3schools.com/jquery/default.asp <br><br>
+
+            «SVG Tutorial», w3schools.com, https://www.w3schools.com/graphics/svg_intro.asp <br><br>
+
+            «HTML Canvas Tutorial», w3schools.com, https://www.w3schools.com/graphics/canvas_intro.asp <br><br>
+
+            «A Complete Guide to Flexbox» , css-tricks.com,<br>
+            https://css-tricks.com/snippets/css/a-guide-to-flexbox/ <br><br>
+
+            «A Complete Guide to Grid», css-tricks.com,<br>
+            https://css-tricks.com/snippets/css/complete-guide-grid/<br><br>
+
+
+          </p>
+        </div>
+
+      </div>
+
+
+      </div>
+
+      <script src="interact.js"></script>
+      <script src="navbar.js"></script>
+
+  </body>
+</html>
